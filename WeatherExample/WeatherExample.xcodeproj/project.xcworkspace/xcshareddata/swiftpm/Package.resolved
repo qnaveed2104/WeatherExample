@@ -1,0 +1,15 @@
+{
+  "originHash" : "ca56a70d270e017de48dc2159a212aa9d3f6ced544cd58df81749e3864c43cab",
+  "pins" : [
+    {
+      "identity" : "weatherconnect",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/qnaveed2104/WeatherConnect.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d8c93e70b0dd945a9b0a0671025261b2ce118f25"
+      }
+    }
+  ],
+  "version" : 3
+}
