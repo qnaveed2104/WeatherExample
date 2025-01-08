@@ -25,13 +25,13 @@ enum ThemeFonts {
         case .heading1:
             return (font: h1(), lineSpacing: 36)
         case .heading2:
-            return (font: h2(), lineSpacing: 28)
+            return (font: h2(), lineSpacing: 0)
         case .title:
             return (font: title(), lineSpacing: 24)
         case .textRegular:
             return (font: textRegular(), lineSpacing: 24)
         case .label:
-            return (font: label(), lineSpacing: 18)
+            return (font: label(), lineSpacing: 0)
         case .customFont:
             return (font: label(), lineSpacing: 0)
 

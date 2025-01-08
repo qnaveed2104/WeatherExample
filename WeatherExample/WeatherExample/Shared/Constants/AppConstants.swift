@@ -6,52 +6,18 @@
 //
 
 enum AppConstants {
-    
-    // MARK: - API
-    enum API {
-        static let baseUrl: String = "https://api.weatherbit.io"
         
-        static let versionTwo: String = "/v2.0"
-        
-        static let currentWeatherEndpoint: String = "/current"
-        static let weatherForcastEndpoint: String = "/forecast/hourly"
-        static let apiKey: String = "key"
-        static let cityKey: String = "city"
-        static let langKey: String = "lang"
-        static let hoursKey: String = "hours"
-
-        static func urlFromEndpoint(endpoint: String, version: String = versionTwo) -> String {
-            return "\(version)\(endpoint)"
-        }
-    }
-    
-    // MARK: - Error Messages
-    struct ErrorMessages {
-        static let invalidBaseUrlMessage: String = "Base URL is not valid"
-        static let invalidURL: String = "Invalid URL"
-    }
-    
-    struct DisplayFormats {
-        static let temperature = "%.0f°C"
-        static let lcoalTime: String = "AT %@ LOCAL TIME"
-        static let formatedCityName: String = "The weather in %@ is:"
-    }
-    
+    // MARK: - UI Strings
     struct DisplayMessages {
-        static let header: String = "24Hour Forecast"
-        static let backButton: String = "Back"
+        static let header: String = "Example App"
+        static let forecastText: String = "Enter a city name for the weather forecast"
+        static let enterCityText: String = "Enter City"
+        static let forecastButtonTitle: String = "Weather Forecast"
     }
     
-    struct DateFormats {
-        static let TimeFormat: String = "HH:mm"
-    }
-    
+    // MARK: - Name of FONTS
     struct FontNames {
         static let bold: String = "Satoshi-Bold"
         static let medium: String = "Satoshi-Medium"
-    }
-    
-    struct SysImagesNames {
-        static let backImage = "chevron.left"
     }
 }
