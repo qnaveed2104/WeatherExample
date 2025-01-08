@@ -19,6 +19,7 @@ struct WeatherInteractor: WeatherInteractorProtocol {
     }
     
     func fetchWeatherView(cityName: String) async throws -> AnyView? {
+        
         return nil
     }
 }

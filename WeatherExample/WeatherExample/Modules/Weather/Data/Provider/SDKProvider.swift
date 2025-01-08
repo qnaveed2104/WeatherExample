@@ -18,12 +18,17 @@ class SDKProvider: SDKProviderProtocol, WeatherSDKDelegate {
 
     init(apiKey: String, weatherSDK: WeatherSDK? = nil) {
         self.apiKey = apiKey
-        self.weatherSDK = weatherSDK
+        initializeSDK()
+    }
+    
+    private func initializeSDK() {
+        let configuration = Configurations(apiKey: apiKey, cityName: "")
+        self.weatherSDK = try? WeatherSDK(configuration: configuration, delegate: self)
     }
 
     // MARK: - SDK Provider
     func provideSDK() -> WeatherSDK? {
-        return nil
+        return weatherSDK
     }
 
     // MARK: - WeatherSDKDelegate
