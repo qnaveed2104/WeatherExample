@@ -33,9 +33,22 @@
 		708DAA202D2F11BB00766DAB /* WeatherExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		708DAB4A2D2F163800766DAB /* Exceptions for "WeatherExample" folder in "WeatherExample" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 708DAA052D2F11B900766DAB /* WeatherExample */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		708DAA082D2F11B900766DAB /* WeatherExample */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				708DAB4A2D2F163800766DAB /* Exceptions for "WeatherExample" folder in "WeatherExample" target */,
+			);
 			path = WeatherExample;
 			sourceTree = "<group>";
 		};
@@ -407,6 +420,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherExample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -439,6 +453,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherExample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
