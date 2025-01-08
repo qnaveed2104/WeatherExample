@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		708DAA352D2F126300766DAB /* WeatherConnect in Frameworks */ = {isa = PBXBuildFile; productRef = 708DAA342D2F126300766DAB /* WeatherConnect */; };
+		708DAB5A2D2F184600766DAB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 708DAB592D2F184600766DAB /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		708DAA062D2F11B900766DAB /* WeatherExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		708DAA162D2F11BB00766DAB /* WeatherExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		708DAA202D2F11BB00766DAB /* WeatherExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		708DAB592D2F184600766DAB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -93,6 +95,7 @@
 		708DA9FD2D2F11B900766DAB = {
 			isa = PBXGroup;
 			children = (
+				708DAB592D2F184600766DAB /* .swiftlint.yml */,
 				708DAA082D2F11B900766DAB /* WeatherExample */,
 				708DAA192D2F11BB00766DAB /* WeatherExampleTests */,
 				708DAA232D2F11BB00766DAB /* WeatherExampleUITests */,
@@ -120,6 +123,7 @@
 				708DAA022D2F11B900766DAB /* Sources */,
 				708DAA032D2F11B900766DAB /* Frameworks */,
 				708DAA042D2F11B900766DAB /* Resources */,
+				708DAB5B2D2F187000766DAB /* Run Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -234,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				708DAB5A2D2F184600766DAB /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +257,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		708DAB5B2D2F187000766DAB /* Run Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Type a script or drag a script file from your workspace to insert its path.\nif [ -x \"/opt/homebrew/bin/swiftlint\" ]; then\n  /opt/homebrew/bin/swiftlint lint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		708DAA022D2F11B900766DAB /* Sources */ = {
@@ -419,6 +446,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherExample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -452,6 +480,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherExample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
