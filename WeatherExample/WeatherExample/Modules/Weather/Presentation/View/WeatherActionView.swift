@@ -41,6 +41,11 @@ struct WeatherActionView: View {
             .toolbarBackground(AppColors.navBarColor.color, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationBarTitle(AppConstants.DisplayMessages.header, displayMode: .inline)
+            .navigationDestination(isPresented: $viewModel.isWeatherViewPresented) {
+                if let weatherView = viewModel.weatherView {
+                    weatherView
+                }
+            }
         }
     }
     

@@ -34,6 +34,8 @@ class WeatherActionViewModel: WeatherActionViewModelProtocol {
                 let view = try await interactor.fetchWeatherView(cityName: cityName)
                 self.weatherView = view
                 self.isLoading = false
+                self.isWeatherViewPresented = true
+
 
             } catch {
                 print(error)
