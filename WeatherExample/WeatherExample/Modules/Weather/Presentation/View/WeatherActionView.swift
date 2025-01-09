@@ -59,7 +59,7 @@ struct WeatherActionView: View {
     
     /// City Input Field
     private func cityInputField() -> some View {
-        TextField(AppConstants.DisplayMessages.enterCityText, text: $cityName)
+        TextField(AppConstants.DisplayMessages.enterCityText, text: $viewModel.cityName)
             .padding(.horizontal, textFieldPadding)
             .frame(height: subViewHeight)
             .background(

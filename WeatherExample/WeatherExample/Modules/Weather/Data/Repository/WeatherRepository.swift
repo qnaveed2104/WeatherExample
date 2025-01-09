@@ -19,7 +19,7 @@ struct WeatherRepository: WeatherRepositoryProtocol {
     }
     
     func getWeatherView(for cityName: String) async throws -> AnyView {
-        guard let weatherSDK = sdkProvider.provideSDK() else {
+        guard let weatherSDK = sdkProvider.initializeSDK(withCityName: cityName) else {
             throw WeatherError.sdkInitializationFailed
         }
         return await weatherSDK.getWeather()

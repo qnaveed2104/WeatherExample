@@ -8,28 +8,26 @@
 import WeatherConnect
 
 protocol SDKProviderProtocol {
-    func provideSDK() -> WeatherSDK?
+    func initializeSDK(withCityName: String) -> WeatherSDK?
 }
 
 class SDKProvider: SDKProviderProtocol, WeatherSDKDelegate {
     private let apiKey: String
     private var weatherSDK: WeatherSDK?
     
-    init(apiKey: String, weatherSDK: WeatherSDK? = nil) {
+    init(apiKey: String) {
         self.apiKey = apiKey
-        initializeSDK()
     }
     
-    private func initializeSDK() {
-        //        let configuration = Configurations(apiKey: apiKey, cityName: "")
-        //        self.weatherSDK = try? WeatherSDK(configuration: configuration, delegate: self)
-        let configuration = Configurations(apiKey: apiKey, cityName: "Berlin")
+    func initializeSDK(withCityName: String) -> WeatherSDK? {
+        let configuration = Configurations(apiKey: apiKey, cityName: withCityName)
         do {
             self.weatherSDK = try WeatherSDK(configuration: configuration, delegate: self)
-            print("WeatherSDK successfully initialized")
+            return provideSDK()
         } catch {
             print("Failed to initialize WeatherSDK: \(error.localizedDescription)")
             self.weatherSDK = nil
+            return nil
         }
     }
     
