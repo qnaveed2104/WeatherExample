@@ -8,7 +8,7 @@
 import WeatherConnect
 
 protocol SDKProviderProtocol {
-    func initializeSDK(withCityName: String) -> WeatherSDK?
+    func initializeSDK(withCityName: String) throws -> WeatherSDK?
 }
 
 class SDKProvider: SDKProviderProtocol, WeatherSDKDelegate {
@@ -19,16 +19,10 @@ class SDKProvider: SDKProviderProtocol, WeatherSDKDelegate {
         self.apiKey = apiKey
     }
     
-    func initializeSDK(withCityName: String) -> WeatherSDK? {
+    func initializeSDK(withCityName: String) throws -> WeatherSDK? {
         let configuration = Configurations(apiKey: apiKey, cityName: withCityName)
-        do {
-            self.weatherSDK = try WeatherSDK(configuration: configuration, delegate: self)
-            return provideSDK()
-        } catch {
-            print("Failed to initialize WeatherSDK: \(error.localizedDescription)")
-            self.weatherSDK = nil
-            return nil
-        }
+        self.weatherSDK = try WeatherSDK(configuration: configuration, delegate: self)
+        return provideSDK()
     }
     
     // MARK: - SDK Provider
@@ -46,6 +40,7 @@ class SDKProvider: SDKProviderProtocol, WeatherSDKDelegate {
     }
     
     func onFinishedWithError(_ error: any Error) {
-        print("onFinishedWithError")
+        let message = AppError.getLocalizedErrorMessage(error: error)
+        print("Error on dissmissing weather view: \(message)")
     }
 }

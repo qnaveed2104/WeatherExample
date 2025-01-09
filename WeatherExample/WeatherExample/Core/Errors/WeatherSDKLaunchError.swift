@@ -16,3 +16,8 @@ enum WeatherError: LocalizedError {
         }
     }
 }
+
+struct IdentifiableError: Identifiable {
+    let id = UUID()
+    let message: String
+}

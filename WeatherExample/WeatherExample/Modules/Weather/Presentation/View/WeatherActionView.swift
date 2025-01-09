@@ -45,6 +45,13 @@ struct WeatherActionView: View {
                     weatherView
                 }
             }
+            .alert(item: $viewModel.errorMessage) { error in
+                Alert(
+                    title: Text("Error"),
+                    message: Text(error.message),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
         }
     }
     
@@ -89,7 +96,7 @@ struct WeatherActionView: View {
     
     // MARK: - Actions
     private func fetchWeatherForecast() {
-//        print("Fetching weather forecast for \(cityName)")
+        //        print("Fetching weather forecast for \(cityName)")
         viewModel.forecastButtonTapped()
     }
 }
