@@ -30,15 +30,22 @@ class WeatherActionViewModel: WeatherActionViewModelProtocol {
     func forecastButtonTapped() {
         Task {
             do {
-                print(cityName)
                 let view = try await interactor.fetchWeatherView(cityName: cityName)
+                cityName = ""
                 self.weatherView = view
                 self.isLoading = false
                 self.isWeatherViewPresented = true
             } catch {
-                print(error)
+                handle(error: error)
             }
             isLoading = false
+        }
+    }
+    
+    private func handle(error: Error) {
+        print("Error fetching weather view: \(error.localizedDescription)")
+        DispatchQueue.main.async {
+            self.isLoading = false
         }
     }
     
