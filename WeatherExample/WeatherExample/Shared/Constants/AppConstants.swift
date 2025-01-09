@@ -11,7 +11,6 @@ enum AppConstants {
         static let apiKey: String = "f8c11bda6cdc4b0c8ad517e57775cc54"
     }
     
-    
     // MARK: - UI Strings
     struct DisplayMessages {
         static let header: String = "Example App"

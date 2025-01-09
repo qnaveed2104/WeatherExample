@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WeatherActionView: View {
+    @ObservedObject var viewModel: WeatherActionViewModel
     @State private var cityName: String = ""
     @FocusState private var isFocused: Bool
     
@@ -85,9 +86,10 @@ struct WeatherActionView: View {
     // MARK: - Actions
     private func fetchWeatherForecast() {
         print("Fetching weather forecast for \(cityName)")
+        viewModel.forecastButtonTapped()
     }
 }
 
 #Preview {
-    WeatherActionView()
+    WeatherActionView(viewModel: WeatherActionViewModel())
 }

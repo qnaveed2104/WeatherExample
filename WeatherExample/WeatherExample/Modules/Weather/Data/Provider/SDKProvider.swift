@@ -12,7 +12,6 @@ protocol SDKProviderProtocol {
 }
 
 class SDKProvider: SDKProviderProtocol, WeatherSDKDelegate {
-    
     private let apiKey: String
     private var weatherSDK: WeatherSDK?
 

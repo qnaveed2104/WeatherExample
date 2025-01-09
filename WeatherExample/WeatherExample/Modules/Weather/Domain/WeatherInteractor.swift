@@ -8,7 +8,7 @@ import SwiftUI
 
 protocol WeatherInteractorProtocol {
     var repository: WeatherRepositoryProtocol { get }
-    func fetchWeatherView(cityName: String) async throws -> AnyView?
+    func fetchWeatherView(cityName: String) async throws -> AnyView
 }
 
 struct WeatherInteractor: WeatherInteractorProtocol {
@@ -18,8 +18,7 @@ struct WeatherInteractor: WeatherInteractorProtocol {
         self.repository = repository
     }
     
-    func fetchWeatherView(cityName: String) async throws -> AnyView? {
-        
-        return nil
+    func fetchWeatherView(cityName: String) async throws -> AnyView {
+        return try await repository.getWeatherView(for: cityName)
     }
 }

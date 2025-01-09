@@ -8,7 +8,7 @@ import SwiftUI
 
 protocol WeatherRepositoryProtocol {
     var sdkProvider: SDKProviderProtocol { get }
-    func getWeatherView(for cityName: String) async throws -> AnyView?
+    func getWeatherView(for cityName: String) async throws -> AnyView
 }
 
 struct WeatherRepository: WeatherRepositoryProtocol {
@@ -18,7 +18,10 @@ struct WeatherRepository: WeatherRepositoryProtocol {
         self.sdkProvider = sdkProvider
     }
     
-    func getWeatherView(for cityName: String) async throws -> AnyView? {
-        return nil
+    @MainActor func getWeatherView(for cityName: String) async throws -> AnyView {
+        guard let weatherSDK = sdkProvider.provideSDK() else {
+            throw NSError(domain: "", code: 111)
+        }
+        return await weatherSDK.getWeather()
     }
 }
