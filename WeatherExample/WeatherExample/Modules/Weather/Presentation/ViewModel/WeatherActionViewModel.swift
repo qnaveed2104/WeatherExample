@@ -29,18 +29,14 @@ class WeatherActionViewModel: WeatherActionViewModelProtocol {
     @MainActor
     func forecastButtonTapped() {
         Task {
-            
             do {
                 let view = try await interactor.fetchWeatherView(cityName: cityName)
                 self.weatherView = view
                 self.isLoading = false
                 self.isWeatherViewPresented = true
-
-
             } catch {
                 print(error)
             }
-            
             isLoading = false
         }
     }

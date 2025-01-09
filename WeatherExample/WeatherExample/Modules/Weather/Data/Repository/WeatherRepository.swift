@@ -18,9 +18,9 @@ struct WeatherRepository: WeatherRepositoryProtocol {
         self.sdkProvider = sdkProvider
     }
     
-    @MainActor func getWeatherView(for cityName: String) async throws -> AnyView {
+    func getWeatherView(for cityName: String) async throws -> AnyView {
         guard let weatherSDK = sdkProvider.provideSDK() else {
-            throw NSError(domain: "", code: 111)
+            throw WeatherError.sdkInitializationFailed
         }
         return await weatherSDK.getWeather()
     }
