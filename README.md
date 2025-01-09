@@ -48,4 +48,5 @@ The app follows the Clean Architecture pattern, which ensures:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com//.git
+   [git clone https://github.com//.git](https://github.com/qnaveed2104/WeatherExample.git)
+   
