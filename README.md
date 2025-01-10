@@ -48,7 +48,7 @@ The app follows the Clean Architecture pattern, which ensures:
 
 1. Clone this repository:
    ```bash
-   [git clone https://github.com//.git](https://github.com/qnaveed2104/WeatherExample.git)
+   git clone https://github.com//.git](https://github.com/qnaveed2104/WeatherExample.git)
 
 
 ## Usage
@@ -63,17 +63,17 @@ The app follows the Clean Architecture pattern, which ensures:
 ## Code Structure
 
 ### Presentation Layer
-- **WeatherInputView**: The main SwiftUI view that handles user input.
-- **WeatherInputViewModel**: Connects the UI with the domain layer, managing the state and interactions.
+- **WeatherActionView**: The main SwiftUI view that handles user input.
+- **WeatherActionViewViewModel**: Connects the UI with the domain layer, managing the state and interactions.
 
 ### Domain Layer
-- **WeatherUseCase**: A protocol defining the business logic for fetching weather data.
+- **WeatherInteractorProtocol**: A protocol defining the business logic for fetching weather data.
 - **WeatherInteractor**: Implements the WeatherUseCase, interacting with the data layer.
 
 ### Data Layer
 - **WeatherRepository**: Protocol for data operations.
-- **WeatherRepositoryImpl**: Implements the repository, interfacing with the WeatherSDKProvider.
-- **WeatherSDKProvider**: Abstracts the initialization and provision of the Weather SDK.
+- **WeatherRepositoryProtocol**: Implements the repository, interfacing with the WeatherSDKProvider.
+- **SDKProvider**: Abstracts the initialization and provision of the Weather SDK.
 
 ## Error Handling
 
