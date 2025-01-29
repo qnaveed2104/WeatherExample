@@ -40,7 +40,7 @@ The app follows the Clean Architecture pattern, which ensures:
 
 ### Prerequisites
 
-- Xcode 15 or later
+- Xcode 16.2
 - iOS 17.0 or later
 - Swift Package Manager (SPM)
 
