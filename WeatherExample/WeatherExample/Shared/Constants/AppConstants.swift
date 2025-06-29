@@ -8,7 +8,7 @@
 enum AppConstants {
         
     struct API {
-        static let apiKey: String = "f8c11bda6cdc4b0c8ad517e57775cc54"
+        static let apiKey: String = "6ac62e830e334742924401be0e80573d"
     }
     
     // MARK: - UI Strings
